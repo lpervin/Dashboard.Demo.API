@@ -4,6 +4,21 @@
     <TargetFramework>net7.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>ac8ddaf5-8c53-4053-8be1-9b82eaca3ac4</UserSecretsId>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="EndpointHandlers\" />
+    <Folder Include="Extensions\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Dashboard.API.DataServices\Dashboard.API.DataServices.csproj" />
+    <ProjectReference Include="..\Dashboard.SharedKernel\Dashboard.SharedKernel.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="7.0.4" />
+  </ItemGroup>
 
 </Project>
