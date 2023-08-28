@@ -16,6 +16,7 @@ public class ProductDataService : IProductService
     }
     public async Task<PagedResults<ProductDTO>> QueryProductsAsync(ProductQuerySpecification productRequest)
     {
+        
         var pagedResults = await _productRepository.QueryProductsAsync(productRequest);
         return new PagedResults<ProductDTO>()
         {
@@ -26,5 +27,14 @@ public class ProductDataService : IProductService
             TotalRecordsCount = pagedResults.TotalRecordsCount,
             CurrentPageRecordsCount = pagedResults.CurrentPageNumber
         };
+    }
+
+    public async Task<ProductDTO?> GetByIdAsync(int id)
+    {
+        var product = await _productRepository.GetByIdAsync(id);
+        if (product == null)
+            return null;
+        
+        return product.ToDTO();
     }
 }

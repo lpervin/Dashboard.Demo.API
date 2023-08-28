@@ -5,7 +5,7 @@ namespace Dashboard.API.DataServices.Extensions;
 
 public static class ProductEntityExtensions
 {
-    public static ProductDTO ToDTO(this Product product)
+    public static ProductDTO? ToDTO(this Product product)
     {
         return new ProductDTO()
         {

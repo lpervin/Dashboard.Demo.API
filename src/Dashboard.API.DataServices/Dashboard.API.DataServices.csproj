@@ -10,6 +10,9 @@
       <ProjectReference Include="..\Dashboard.Core\Dashboard.Core.csproj" />
       <ProjectReference Include="..\Dashboard.Infrastructure\Dashboard.Infrastructure.csproj" />
       <ProjectReference Include="..\Dashboard.SharedKernel\Dashboard.SharedKernel.csproj" />
+      <PackageReference Include="Bogus" Version="34.0.2" />
+      <PackageReference Include="MongoDB.Driver" Version="2.21.0" />
+
     </ItemGroup>
 
 

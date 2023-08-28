@@ -9,7 +9,6 @@
 
   <ItemGroup>
     <Folder Include="EndpointHandlers\" />
-    <Folder Include="Extensions\" />
   </ItemGroup>
 
   <ItemGroup>
