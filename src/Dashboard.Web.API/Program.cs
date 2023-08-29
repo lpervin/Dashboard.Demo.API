@@ -1,6 +1,7 @@
 using Dashboard.API.DataServices.DTOs;
 using Dashboard.API.DataServices.Repositories;
 using Dashboard.API.DataServices.Services;
+using Dashboard.Demo.API.Extensions;
 using Dashboard.Demo.API.Models.Request;
 using Dashboard.Infrastructure.dbContext;
 using Dashboard.SharedKernel.Repository;
@@ -41,13 +42,6 @@ app.MapGet("/products/{id}", async Task<Results<NotFound, Ok<ProductDTO>>> (int 
 
 });
 
-app.MapGet("users", async Task<Results<BadRequest, Ok<PagedResults<UserInfoDTO>>>> (PagingRequest paging, IUserRepository userRepository) =>
-{
-    if (paging.CurrentPageNumber == 0)
-        return TypedResults.BadRequest();
-
-    var users = await userRepository.ListUsersAsync(paging);
-    return TypedResults.Ok(users);
-});
+app.RegisterUsersEndpoints();
 
 app.Run();

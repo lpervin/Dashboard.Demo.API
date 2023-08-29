@@ -5,11 +5,8 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>ac8ddaf5-8c53-4053-8be1-9b82eaca3ac4</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Folder Include="EndpointHandlers\" />
-  </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Dashboard.API.DataServices\Dashboard.API.DataServices.csproj" />
@@ -18,6 +15,12 @@
 
   <ItemGroup>
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="7.0.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="..\..\.dockerignore">
+      <Link>.dockerignore</Link>
+    </Content>
   </ItemGroup>
 
 </Project>
