@@ -17,6 +17,18 @@ builder.Services.AddDbContext<ProductsDbContext>(opt =>
 {
     opt.UseNpgsql(connectionString);
 });
+
+/**CORS**/
+var allowCorsPolicy = "_allowAllOrigins";
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name:allowCorsPolicy, policy =>
+    {
+        policy.WithOrigins("*").AllowAnyHeader().AllowAnyMethod();
+    });
+});
+/***/
+
 builder.Services.AddScoped<IProductReadOnlyRepository, ProductsReadOnlyRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddTransient<IProductService, ProductDataService>();
@@ -43,5 +55,5 @@ app.MapGet("/products/{id}", async Task<Results<NotFound, Ok<ProductDTO>>> (int 
 });
 
 app.RegisterUsersEndpoints();
-
+app.UseCors(allowCorsPolicy);
 app.Run();
