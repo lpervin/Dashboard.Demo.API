@@ -8,4 +8,6 @@ public interface IProductService
 {
    Task<PagedResults<ProductDTO>> QueryProductsAsync(ProductQuerySpecification productRequest);
    Task<ProductDTO?> GetByIdAsync(int id);
+
+   Task<IReadOnlyList<ProductCategoryDTO>> GetCategoriesAsync(string? searchTerm);
 }

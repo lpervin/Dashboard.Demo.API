@@ -33,6 +33,7 @@ builder.Services.AddScoped<IProductReadOnlyRepository, ProductsReadOnlyRepositor
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddTransient<IProductService, ProductDataService>();
 var app = builder.Build();
+/**Products**/
 app.MapGet("/products", async Task<Results<BadRequest, Ok<PagedResults<ProductDTO>>>> (ProductQueryRequest? query, [FromServices]IProductService productDataService) =>
 {
     System.Diagnostics.Debug.WriteLine(query);
@@ -53,7 +54,17 @@ app.MapGet("/products/{id}", async Task<Results<NotFound, Ok<ProductDTO>>> (int 
     return TypedResults.Ok(productDto);
 
 });
+/**Products**/
 
+/**Categories**/
+app.MapGet("productcategories",
+    async Task<Ok<List<ProductCategoryDTO>>> (string? searchTerm, IProductService productDataService) =>
+    {
+        var categories = await productDataService.GetCategoriesAsync(searchTerm);
+        return TypedResults.Ok(categories.ToList());
+    });
+/**Users*/
 app.RegisterUsersEndpoints();
+/**Users**/
 app.UseCors(allowCorsPolicy);
 app.Run();

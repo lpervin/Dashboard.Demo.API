@@ -54,7 +54,10 @@ public class ProductsReadOnlyRepository : IProductReadOnlyRepository
         };
 
     }
-    
-  
 
+    public async Task<IReadOnlyList<ProductCategory>> GetProductCategoriesAsync(string? searchTerm)
+    {
+       var results = _productsDbContext.ProductCategories.ApplyFiltering(searchTerm).OrderBy(p => p.Name);
+       return await results.ToListAsync();
+    }
 }

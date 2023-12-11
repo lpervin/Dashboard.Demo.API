@@ -37,4 +37,10 @@ public class ProductDataService : IProductService
         
         return product.ToDTO();
     }
+
+    public async Task<IReadOnlyList<ProductCategoryDTO>> GetCategoriesAsync(string? searchTerm)
+    {
+        var results = await _productRepository.GetProductCategoriesAsync(searchTerm);
+        return results.Select(p => p.ToDTO()).ToList();
+    }
 }

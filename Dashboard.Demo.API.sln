@@ -20,6 +20,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dashboard.Data.Seed", "src\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dashboard.API.DataServices", "src\Dashboard.API.DataServices\Dashboard.API.DataServices.csproj", "{F8338A15-1385-4E0E-AE50-62418A9FC1B9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSPlayGround", "src\AWSPlayGround\AWSPlayGround.csproj", "{98FD688F-DC75-41D9-9E82-A9F7C4972649}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -34,6 +36,7 @@ Global
 		{429B26F6-EA80-414C-904D-A10850014164} = {931C972A-0606-4B57-A9FF-DFC544DD9EAC}
 		{C5EDDD80-9F24-48FE-9438-B44435C62526} = {429B26F6-EA80-414C-904D-A10850014164}
 		{F8338A15-1385-4E0E-AE50-62418A9FC1B9} = {931C972A-0606-4B57-A9FF-DFC544DD9EAC}
+		{98FD688F-DC75-41D9-9E82-A9F7C4972649} = {429B26F6-EA80-414C-904D-A10850014164}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{8AF7388F-C800-40E8-85E4-8E7F0E1E19CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -64,5 +67,9 @@ Global
 		{F8338A15-1385-4E0E-AE50-62418A9FC1B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F8338A15-1385-4E0E-AE50-62418A9FC1B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F8338A15-1385-4E0E-AE50-62418A9FC1B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98FD688F-DC75-41D9-9E82-A9F7C4972649}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98FD688F-DC75-41D9-9E82-A9F7C4972649}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98FD688F-DC75-41D9-9E82-A9F7C4972649}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98FD688F-DC75-41D9-9E82-A9F7C4972649}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

@@ -1,4 +1,5 @@
 using System.Linq.Expressions;
+using Dashboard.API.DataServices.DTOs;
 using Dashboard.API.DataServices.Specifications;
 using Dashboard.Core.Models;
 using Dashboard.SharedKernel.Specifications;
@@ -17,6 +18,16 @@ public static class IQueryableExtensions
                 p.ProductName.Contains(productQuery.SearchTerm) || p.Description.Contains(productQuery.SearchTerm));
         
         return query;
+    }
+
+    public static IQueryable<ProductCategory> ApplyFiltering(this IQueryable<ProductCategory> query, string? searchTerm)
+    {
+        if (string.IsNullOrEmpty(searchTerm))
+        {
+            return query;
+        }
+
+        return query.Where(pc => pc.Name!.Contains(searchTerm));
     }
 
     public static IQueryable<T> ApplyOrdering<T>(this IQueryable<T> query, OrderByInfo? orderBy, Dictionary<string, Expression<Func<T, object>>> columnsMap )
