@@ -11,7 +11,7 @@ public class CloudWatchLogger
     private string _logGroup;
     private CloudWatchLogger(string logGroup)
     {
-        var awsCreds = new BasicAWSCredentials("AKIAWYR53V5ME32K3OOX", "hu4Ap996E3JOVEOnnPGsgIIAk7J62CdJupI274Tu");
+        var awsCreds = new BasicAWSCredentials("Secret", "EvenBiggerSecret");
         _awsCloudClient = new AmazonCloudWatchLogsClient(awsCreds, new AmazonCloudWatchLogsConfig() { AuthenticationRegion = "us-east-1"});
         _logGroup = logGroup;
     }
